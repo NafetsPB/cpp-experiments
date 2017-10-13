@@ -10,7 +10,7 @@ void WaitForChar()
 
 void IncrementIntVal(int iValue)
 {
-   iValue++;
+   ++iValue;
 }
 
 void IncrementIntRef(int& iReference)
@@ -23,9 +23,9 @@ int IncrementAfterIntReturnVal(int iValue)
    return iValue++;
 }
 
-int IncrementAfterIntReturnRef(int& iValue)
+int IncrementAfterIntReturnRef(int& iReference)
 {
-   return iValue++;
+   return iReference++;
 }
 
 int IncrementBeforeIntReturnVal(int iValue)
@@ -33,9 +33,9 @@ int IncrementBeforeIntReturnVal(int iValue)
    return ++iValue;
 }
 
-int IncrementBeforeIntReturnRef(int& iValue)
+int IncrementBeforeIntReturnRef(int& iReference)
 {
-   return ++iValue;
+   return ++iReference;
 }
 
 void IncrementAfterIntPtr(int *pInt)
