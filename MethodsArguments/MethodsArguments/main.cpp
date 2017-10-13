@@ -28,6 +28,18 @@ int IncrementAfterIntReturnRef(int& iReference)
    return iReference++;
 }
 
+int IncrementAfterIntReturnVal2Steps(int iValue)
+{
+   iValue++;
+   return iValue;
+}
+
+int IncrementAfterIntReturnRef2Steps(int& iReference)
+{
+   iReference++;
+   return iReference;
+}
+
 int IncrementBeforeIntReturnVal(int iValue)
 {
    return ++iValue;
@@ -66,21 +78,41 @@ auto main() -> int
 
    cout << "Wert nach IncrementIntRef: " << iIndex << endl;
 
-   iIndex = IncrementAfterIntReturnVal(iIndex);
+   int iRetVal = IncrementAfterIntReturnVal(iIndex);
 
-   cout << "Wert nach IncrementAfterIntReturnVal: " << iIndex << endl;
+   cout << "Wert nach IncrementAfterIntReturnVal: " << iIndex << " Return Value = " << iRetVal << endl;
 
-   iIndex = IncrementAfterIntReturnRef(iIndex);
+   iIndex = iRetVal;
 
-   cout << "Wert nach IncrementAfterIntReturnRef: " << iIndex << endl;
+   iRetVal = IncrementAfterIntReturnRef(iIndex);
 
-   iIndex = IncrementBeforeIntReturnVal(iIndex);
+   cout << "Wert nach IncrementAfterIntReturnRef: " << iIndex << " Return Value = " << iRetVal << endl;
 
-   cout << "Wert nach IncrementBeforeIntReturnVal: " << iIndex << endl;
+   iIndex = iRetVal;
 
-   iIndex = IncrementBeforeIntReturnRef(iIndex);
+   iRetVal = IncrementAfterIntReturnVal2Steps(iIndex);
 
-   cout << "Wert nach IncrementBeforeIntReturnRef: " << iIndex << endl;
+   cout << "Wert nach IncrementAfterIntReturnVal2Steps: " << iIndex << " Return Value = " << iRetVal << endl;
+
+   iIndex = iRetVal;
+
+   iRetVal = IncrementAfterIntReturnRef2Steps(iIndex);
+
+   cout << "Wert nach IncrementAfterIntReturnRef2Steps: " << iIndex << " Return Value = " << iRetVal << endl;
+
+   iIndex = iRetVal;
+
+   iRetVal = IncrementBeforeIntReturnVal(iIndex);
+
+   cout << "Wert nach IncrementBeforeIntReturnVal: " << iIndex << " Return Value = " << iRetVal << endl;
+
+   iIndex = iRetVal;
+
+   iRetVal = IncrementBeforeIntReturnRef(iIndex);
+
+   cout << "Wert nach IncrementBeforeIntReturnRef: " << iIndex << " Return Value = " << iRetVal << endl;
+
+   iIndex = iRetVal;
 
    IncrementAfterIntPtr(&iIndex);
 
