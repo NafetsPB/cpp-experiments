@@ -10,7 +10,7 @@ void WaitForChar()
 
 void IncrementIntVal(int iValue)
 {
-   ++iValue;
+   iValue++;
 }
 
 void IncrementIntRef(int& iReference)
