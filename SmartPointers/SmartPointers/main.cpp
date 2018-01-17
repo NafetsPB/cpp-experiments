@@ -35,7 +35,54 @@ auto main() -> int
    if (MovedPointerToMyStruct)
       cout << "MovedPointerToMyStruct owns MyStruct" << endl;
 
+   // Create a Shared Pointer
+
+   auto SharedPointerToMyStruct = make_shared<MyStruct>(2, 2.2f);
+
+   // Create a Weak Pointer
+
+   auto WeakPointer = std::shared_ptr<MyStruct>(SharedPointerToMyStruct);
+
+   if (SharedPointerToMyStruct)
+      cout << "Shared Pointer owns MyStruct" << endl;
+
+   if (WeakPointer)
+      cout << "Weak Pointer also points to MyStruct but does not own it." << endl;
+
+   // Release and/or Destruct
+
+/*
+   WeakPointer.reset();
+
+   if (WeakPointer)
+      cout << "Weak Pointer still valid after reset()" << endl;
+   else if (SharedPointerToMyStruct)
+      cout << "Weak Pointer invalid, Shared Pointer still there." << endl;
+*/
+
+   if (SharedPointerToMyStruct)
+   {
+      delete std::get_deleter<MyStruct>(SharedPointerToMyStruct);
+      SharedPointerToMyStruct.reset();
+   }
+
+   if (SharedPointerToMyStruct)
+      cout << "Shared Pointer still valid after delete()." << endl;
+   else
+      cout << "Shared Pointer is null after delete()." << endl;
+
+   if (WeakPointer)
+      cout << "Weak Pointer still valid after reset()" << endl;
+   else if (SharedPointerToMyStruct)
+      cout << "Weak Pointer invalid, Shared Pointer still there." << endl;
+
+   WeakPointer.reset();
+
+   if (!WeakPointer)
+      cout << "Weak Pointer is null after reset()" << endl;
+   
    // Wait for any key to be pressed before exiting the application
+   cout << "\n----\nPress any key to exit." << endl;
    std::getchar();
 
    return 0;
