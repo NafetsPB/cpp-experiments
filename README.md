@@ -1,4 +1,6 @@
 # cpp-experiments
 
-Dies ist ein erstes GitHub-Projekt für Experimente mit C++. 
-Diese Änderung habe ich in Visual Studio 15.4.0 mit dem GitHub-Plugin gemacht.
+This is my very first GitHub repository. It is basically meant as a playground just for myself to experiment with C++, especially the newer versions (C++11, 14, 17).
+
+I have changed this file just recently using Visual Studio Code on Linux!
+
