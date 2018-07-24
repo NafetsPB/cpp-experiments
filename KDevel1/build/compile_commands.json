@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/stefan/git/cpp-experiments/KDevel1/build",
+  "command": "/usr/bin/c++     -g   -o CMakeFiles/kdevel1.dir/main.cpp.o -c /home/stefan/git/cpp-experiments/KDevel1/main.cpp",
+  "file": "/home/stefan/git/cpp-experiments/KDevel1/main.cpp"
+}
+]
